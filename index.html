@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Blue Lock RPG</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       margin: 0;
@@ -44,6 +44,7 @@
       font-size: 1rem;
       text-decoration: none;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -51,10 +52,50 @@
       color: #000;
     }
 
+    form {
+      margin-top: 40px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #111;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00bfff44;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #222;
+      color: white;
+    }
+
+    input[type='submit'] {
+      background-color: #00bfff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type='submit']:hover {
+      background-color: #0099cc;
+    }
+
     footer {
       margin-top: 80px;
       font-size: 0.9rem;
       color: #444;
+    }
+
+    #mensagem {
+      color: #00ff99;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -64,14 +105,52 @@
     <p>"Supere seus limites. Seja o atacante nº 1."</p>
 
     <div class="buttons">
-      <a href="https://forms.gle/seuLinkAqui" class="btn" target="_blank">Inscreva-se</a>
-      <a href="https://seulink.com/jogadores" class="btn" target="_blank">Ver Jogadores</a>
-      <a href="https://seulink.com/como-jogar" class="btn" target="_blank">Como Jogar / Regras</a>
+      <a class="btn" onclick="document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' })">Inscreva-se</a>
+      <a href="#jogadores" class="btn">Ver Jogadores</a>
+      <a href="#regras" class="btn">Como Jogar / Regras</a>
     </div>
   </header>
+
+  <!-- Formulário direto no site -->
+  <section id="formulario">
+    <form onsubmit="enviarFormulario(event)">
+      <h2 style="color: #00bfff;">Formulário de Inscrição</h2>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+      <input type="number" id="idade" name="idade" placeholder="Sua idade" required />
+      <select id="posicao" name="posicao" required>
+        <option value="">Selecione a posição</option>
+        <option value="Atacante">Atacante</option>
+        <option value="Goleiro">Goleiro</option>
+        <option value="Zagueiro">Zagueiro</option>
+        <option value="Meio-campo">Meio-campo</option>
+      </select>
+      <input type="submit" value="Enviar Inscrição" />
+      <div id="mensagem"></div>
+    </form>
+  </section>
 
   <footer>
     <p>Site criado por Dree &copy; 2025</p>
   </footer>
+
+  <script>
+    function enviarFormulario(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const idade = document.getElementById('idade').value;
+      const posicao = document.getElementById('posicao').value;
+
+      // Aqui você pode fazer o envio para um banco de dados real ou Google Sheets via API futuramente
+      console.log("Inscrição recebida:", nome, idade, posicao);
+
+      document.getElementById('mensagem').innerText = "Inscrição enviada com sucesso!";
+
+      // Limpa os campos
+      document.getElementById('nome').value = '';
+      document.getElementById('idade').value = '';
+      document.getElementById('posicao').value = '';
+    }
+  </script>
 </body>
 </html>
