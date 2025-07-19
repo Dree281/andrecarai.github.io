@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Blue Lock RPG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    header {
+      padding: 60px 20px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: transparent;
+      color: #00bfff;
+      border: 2px solid #00bfff;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00bfff;
+      color: #000;
+    }
+
+    .form-section {
+      margin: 60px auto;
+      max-width: 500px;
+      padding: 20px;
+      background: #111;
+      border-radius: 12px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      background-color: #222;
+      color: white;
+      font-size: 1rem;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #888;
+    }
+
+    button {
+      background-color: #00bfff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blue Lock RPG</h1>
+    <p>"Supere seus limites. Seja o atacante nº 1."</p>
+
+    <div class="buttons">
+      <a href="#formulario" class="btn">Inscreva-se</a>
+      <a href="https://seulink.com/jogadores" class="btn" target="_blank">Ver Jogadores</a>
+      <a href="https://seulink.com/como-jogar" class="btn" target="_blank">Como Jogar / Regras</a>
+    </div>
+  </header>
+
+  <section class="form-section" id="formulario">
+    <h2>Formulário de Inscrição</h2>
+    <form action="https://formsubmit.co/seuemail@gmail.com" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome ou apelido no RPG" required>
+      <input type="text" name="posição" placeholder="Sua posição preferida (Ex: Atacante)">
+      <input type="text" name="estilo" placeholder="Descreva seu estilo de jogo">
+      <textarea name="historia" placeholder="Conte um pouco da história do seu personagem..." rows="4"></textarea>
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">Enviar Inscrição</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Site criado por Dree &copy; 2025</p>
+  </footer>
+</body>
+</html>
